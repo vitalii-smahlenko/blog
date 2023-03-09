@@ -27,7 +27,7 @@
   - http://localhost:8080/users/getUsersWithUniqueName
 - Зберегти User
 - Зберегти Article 
-- Також потрібно написати 1 JUnit
+- Написав 1 JUnit
 - БД in-memory H2
   - http://localhost:8080/h2-console (пароль sa - його можна змінити в application.properties)
 - Дял того щоб додати User через POST-запит, можна використовувати Postman
