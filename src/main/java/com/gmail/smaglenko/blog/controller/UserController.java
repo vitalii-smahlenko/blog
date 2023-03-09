@@ -5,10 +5,10 @@ import com.gmail.smaglenko.blog.dto.response.UserResponseDto;
 import com.gmail.smaglenko.blog.model.Color;
 import com.gmail.smaglenko.blog.service.ArticleService;
 import com.gmail.smaglenko.blog.service.UserService;
-import com.gmail.smaglenko.blog.service.mapper.ArticleDtoMapper;
 import com.gmail.smaglenko.blog.service.mapper.UserDtoMapper;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,20 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
     private final ArticleService articleService;
     private final UserDtoMapper userDtoMapper;
-    private final ArticleDtoMapper articleDtoMapper;
-
-    public UserController(UserService userService, ArticleService articleService,
-                          UserDtoMapper userDtoMapper,
-                          ArticleDtoMapper articleDtoMapper) {
-        this.userService = userService;
-        this.articleService = articleService;
-        this.userDtoMapper = userDtoMapper;
-        this.articleDtoMapper = articleDtoMapper;
-    }
 
     @PostMapping("/save")
     public UserResponseDto save(@RequestBody UserRequestDto userRequestDto) {
