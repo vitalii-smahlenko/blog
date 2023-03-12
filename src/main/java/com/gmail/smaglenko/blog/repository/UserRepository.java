@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    User findByName(String name);
+
     List<User> getAllByAgeAfter(int age);
 
     @Query("SELECT u FROM User u JOIN u.articles a WHERE a.color = :color")
