@@ -2,7 +2,6 @@ package com.gmail.smaglenko.blog.service.impl;
 
 import com.gmail.smaglenko.blog.model.Article;
 import com.gmail.smaglenko.blog.repository.ArticleRepository;
-import com.gmail.smaglenko.blog.repository.UserRepository;
 import com.gmail.smaglenko.blog.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ArticleServiceImpl implements ArticleService {
     private final ArticleRepository articleRepository;
-    private final UserRepository userRepository;
 
     @Override
     public Article save(Article article) {

@@ -1,13 +1,16 @@
 package com.gmail.smaglenko.blog.controller;
 
+import com.gmail.smaglenko.blog.dto.request.ArticleRequestDto;
 import com.gmail.smaglenko.blog.dto.request.UserRequestDto;
+import com.gmail.smaglenko.blog.dto.response.ArticleResponseDto;
 import com.gmail.smaglenko.blog.dto.response.UserResponseDto;
+import com.gmail.smaglenko.blog.model.Article;
 import com.gmail.smaglenko.blog.model.Color;
 import com.gmail.smaglenko.blog.model.User;
 import com.gmail.smaglenko.blog.service.ArticleService;
 import com.gmail.smaglenko.blog.service.UserService;
-import com.gmail.smaglenko.blog.service.impl.mapper.RequestDtoMapper;
-import com.gmail.smaglenko.blog.service.impl.mapper.ResponseDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.RequestDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.ResponseDtoMapper;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private final UserService userService;
     private final ArticleService articleService;
-    private final RequestDtoMapper<UserRequestDto, User> requestDtoMapper;
     private final ResponseDtoMapper<UserResponseDto, User> responseDtoMapper;
+    private final RequestDtoMapper<UserRequestDto, User> requestDtoMapper;
 
     @PostMapping("/save")
     public UserResponseDto save(@RequestBody UserRequestDto userRequestDto) {

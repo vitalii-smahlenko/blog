@@ -1,15 +1,15 @@
-package com.gmail.smaglenko.blog.service.impl.mapper.impl;
+package com.gmail.smaglenko.blog.service.mapper.impl;
 
 import com.gmail.smaglenko.blog.dto.request.UserRequestDto;
 import com.gmail.smaglenko.blog.dto.response.UserResponseDto;
 import com.gmail.smaglenko.blog.model.User;
-import com.gmail.smaglenko.blog.service.impl.mapper.RequestDtoMapper;
-import com.gmail.smaglenko.blog.service.impl.mapper.ResponseDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.RequestDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.ResponseDtoMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserDtoMapperImpl implements ResponseDtoMapper<UserResponseDto, User>,
-        RequestDtoMapper<UserRequestDto, User> {
+public class UserDtoMapperImpl implements RequestDtoMapper<UserRequestDto, User>,
+        ResponseDtoMapper<UserResponseDto, User> {
     @Override
     public UserResponseDto mapToDto(User user) {
         UserResponseDto responseDto = new UserResponseDto();
