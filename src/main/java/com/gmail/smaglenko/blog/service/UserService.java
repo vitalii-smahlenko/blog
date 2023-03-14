@@ -5,6 +5,7 @@ import com.gmail.smaglenko.blog.model.User;
 import java.util.List;
 
 public interface UserService {
+    User findByName(String name);
     List<User> getAllByAgeAfter(int age);
 
     List<String> getUsersWithUniqueNameAndMoreThanThreeArticle();

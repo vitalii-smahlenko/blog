@@ -1,11 +1,16 @@
 package com.gmail.smaglenko.blog.controller;
 
+import com.gmail.smaglenko.blog.dto.request.ArticleRequestDto;
 import com.gmail.smaglenko.blog.dto.request.UserRequestDto;
+import com.gmail.smaglenko.blog.dto.response.ArticleResponseDto;
 import com.gmail.smaglenko.blog.dto.response.UserResponseDto;
+import com.gmail.smaglenko.blog.model.Article;
 import com.gmail.smaglenko.blog.model.Color;
+import com.gmail.smaglenko.blog.model.User;
 import com.gmail.smaglenko.blog.service.ArticleService;
 import com.gmail.smaglenko.blog.service.UserService;
-import com.gmail.smaglenko.blog.service.mapper.UserDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.RequestDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.ResponseDtoMapper;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
@@ -22,25 +27,26 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private final UserService userService;
     private final ArticleService articleService;
-    private final UserDtoMapper userDtoMapper;
+    private final ResponseDtoMapper<UserResponseDto, User> responseDtoMapper;
+    private final RequestDtoMapper<UserRequestDto, User> requestDtoMapper;
 
     @PostMapping("/save")
     public UserResponseDto save(@RequestBody UserRequestDto userRequestDto) {
         userRequestDto.getArticles().forEach(articleService::save);
-        return userDtoMapper.mapToDto(userService.save(userDtoMapper.mapToModel(userRequestDto)));
+        return responseDtoMapper.mapToDto(userService.save(requestDtoMapper.mapToModel(userRequestDto)));
     }
 
     @GetMapping("/getAllByAgeAfter")
     public List<UserResponseDto> getAllByAgeAfter(@RequestParam int age) {
         return userService.getAllByAgeAfter(age).stream()
-                .map(userDtoMapper::mapToDto)
+                .map(responseDtoMapper::mapToDto)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/getAllByArticleColor")
     public List<UserResponseDto> getUsersWithArticleColor(@RequestParam Color color) {
         return userService.getUsersWithArticleColor(color).stream()
-                .map(userDtoMapper::mapToDto)
+                .map(responseDtoMapper::mapToDto)
                 .collect(Collectors.toList());
     }
 

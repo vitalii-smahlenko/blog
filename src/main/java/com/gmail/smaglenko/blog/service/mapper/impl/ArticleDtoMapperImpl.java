@@ -3,11 +3,13 @@ package com.gmail.smaglenko.blog.service.mapper.impl;
 import com.gmail.smaglenko.blog.dto.request.ArticleRequestDto;
 import com.gmail.smaglenko.blog.dto.response.ArticleResponseDto;
 import com.gmail.smaglenko.blog.model.Article;
-import com.gmail.smaglenko.blog.service.mapper.ArticleDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.RequestDtoMapper;
+import com.gmail.smaglenko.blog.service.mapper.ResponseDtoMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ArticleDtoMapperImpl implements ArticleDtoMapper {
+public class ArticleDtoMapperImpl implements RequestDtoMapper<ArticleRequestDto, Article>,
+        ResponseDtoMapper<ArticleResponseDto, Article> {
     @Override
     public ArticleResponseDto mapToDto(Article article) {
         ArticleResponseDto articleResponseDto = new ArticleResponseDto();

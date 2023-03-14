@@ -14,6 +14,11 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
+    public User findByName(String name) {
+        return userRepository.findByName(name);
+    }
+
+    @Override
     public List<User> getAllByAgeAfter(int age) {
         return userRepository.getAllByAgeAfter(age);
     }
