@@ -2,9 +2,12 @@ package com.gmail.smaglenko.blog;
 
 import com.gmail.smaglenko.blog.model.Article;
 import com.gmail.smaglenko.blog.model.Color;
+import com.gmail.smaglenko.blog.model.Role;
 import com.gmail.smaglenko.blog.model.User;
+import com.gmail.smaglenko.blog.model.UserAuth;
 import com.gmail.smaglenko.blog.repository.ArticleRepository;
 import com.gmail.smaglenko.blog.repository.UserRepository;
+import com.gmail.smaglenko.blog.service.UserAuthService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -12,6 +15,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class BlogApplication {
@@ -20,8 +25,20 @@ public class BlogApplication {
     }
 
     @Bean
-    CommandLineRunner run(UserRepository userRepository, ArticleRepository articleRepository) {
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    CommandLineRunner run(UserRepository userRepository, ArticleRepository articleRepository,
+                          UserAuthService userAuthService) {
         return args -> {
+            UserAuth userAuth = new UserAuth();
+            userAuth.setUsername("admin");
+            userAuth.setPassword("admin");
+            userAuth.getRoles().add(Role.ADMIN);
+            userAuthService.save(userAuth);
+
             Random random = new Random();
             String[] names = new String[]{"Petro", "Daria", "Mariya", "Viktoria", "Anna", "Taras",
                     "Veronika"};

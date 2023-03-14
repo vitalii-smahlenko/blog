@@ -40,3 +40,15 @@
     { "text": "Article 3", "color": "PURPLE" }, <br />
     { "text": "Article 4", "color": "BLUE" } ] <br />
 }
+----
+# Додав в проєкт Spring Security та JWT <br />
+Для того щоб протестувати можна використовувати Postman
+- Відпрвити POST-запит на http://localhost:8080/register <br />
+  з об'єктом JSON наптиклад {"username": "User", "password": "1234"}
+- Наступрим кроком, потрібно залогінитись. Відправивти POST-запит на http://localhost:8080/login <br />
+  з тимже об'єктом JSON наптиклад {"username": "User", "password": "1234"}
+- У відповідь отримаєте token який потрібно помістити в Authorization/Bearer Token. Та можна відправити GET-запит наприклат на http://localhost:8080/users/getUsersWithUniqueName
+
+<p align="center">
+<video src="video/demo-video.mp4">
+<p>
