@@ -1,4 +1,4 @@
-package com.gmail.smaglenko.blog.model.service.mapper;
+package com.gmail.smaglenko.blog.service.mapper;
 
 import com.gmail.smaglenko.blog.dto.ArticleDto;
 import com.gmail.smaglenko.blog.model.Article;

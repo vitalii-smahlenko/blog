@@ -2,8 +2,8 @@ package com.gmail.smaglenko.blog.controller;
 
 import com.gmail.smaglenko.blog.dto.UserDto;
 import com.gmail.smaglenko.blog.model.Role;
-import com.gmail.smaglenko.blog.model.service.UserService;
-import com.gmail.smaglenko.blog.model.service.mapper.UserDtoMapper;
+import com.gmail.smaglenko.blog.service.UserService;
+import com.gmail.smaglenko.blog.service.mapper.UserDtoMapper;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

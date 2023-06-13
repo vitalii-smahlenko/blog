@@ -1,4 +1,4 @@
-package com.gmail.smaglenko.blog.model.service;
+package com.gmail.smaglenko.blog.service;
 
 import com.gmail.smaglenko.blog.model.Article;
 import java.util.List;

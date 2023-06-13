@@ -2,7 +2,7 @@ package com.gmail.smaglenko.blog;
 
 import com.gmail.smaglenko.blog.model.Role;
 import com.gmail.smaglenko.blog.model.User;
-import com.gmail.smaglenko.blog.model.service.UserService;
+import com.gmail.smaglenko.blog.service.UserService;
 import java.util.Optional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

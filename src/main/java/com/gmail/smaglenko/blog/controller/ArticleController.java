@@ -1,9 +1,9 @@
 package com.gmail.smaglenko.blog.controller;
 
 import com.gmail.smaglenko.blog.dto.ArticleDto;
-import com.gmail.smaglenko.blog.model.service.ArticleService;
-import com.gmail.smaglenko.blog.model.service.UserService;
-import com.gmail.smaglenko.blog.model.service.mapper.ArticleDtoMapper;
+import com.gmail.smaglenko.blog.service.ArticleService;
+import com.gmail.smaglenko.blog.service.UserService;
+import com.gmail.smaglenko.blog.service.mapper.ArticleDtoMapper;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import java.util.stream.Collectors;

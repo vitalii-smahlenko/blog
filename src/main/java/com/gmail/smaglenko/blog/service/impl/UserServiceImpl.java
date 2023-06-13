@@ -1,11 +1,11 @@
-package com.gmail.smaglenko.blog.model.service.impl;
+package com.gmail.smaglenko.blog.service.impl;
 
 import com.gmail.smaglenko.blog.model.Article;
 import com.gmail.smaglenko.blog.model.Role;
 import com.gmail.smaglenko.blog.model.User;
-import com.gmail.smaglenko.blog.model.service.SequenceGeneratorService;
+import com.gmail.smaglenko.blog.service.SequenceGeneratorService;
 import com.gmail.smaglenko.blog.repository.UserRepository;
-import com.gmail.smaglenko.blog.model.service.UserService;
+import com.gmail.smaglenko.blog.service.UserService;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;

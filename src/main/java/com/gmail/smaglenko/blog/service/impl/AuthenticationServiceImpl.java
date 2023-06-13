@@ -1,10 +1,10 @@
-package com.gmail.smaglenko.blog.model.service.impl;
+package com.gmail.smaglenko.blog.service.impl;
 
 import com.gmail.smaglenko.blog.exception.AuthenticationException;
 import com.gmail.smaglenko.blog.model.Role;
 import com.gmail.smaglenko.blog.model.User;
-import com.gmail.smaglenko.blog.model.service.AuthenticationService;
-import com.gmail.smaglenko.blog.model.service.UserService;
+import com.gmail.smaglenko.blog.service.AuthenticationService;
+import com.gmail.smaglenko.blog.service.UserService;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

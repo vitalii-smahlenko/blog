@@ -1,7 +1,7 @@
 package com.gmail.smaglenko.blog.security;
 
 import com.gmail.smaglenko.blog.model.User;
-import com.gmail.smaglenko.blog.model.service.UserService;
+import com.gmail.smaglenko.blog.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

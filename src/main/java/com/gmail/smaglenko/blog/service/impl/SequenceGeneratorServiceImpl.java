@@ -1,7 +1,7 @@
-package com.gmail.smaglenko.blog.model.service.impl;
+package com.gmail.smaglenko.blog.service.impl;
 
 import com.gmail.smaglenko.blog.model.DbSequence;
-import com.gmail.smaglenko.blog.model.service.SequenceGeneratorService;
+import com.gmail.smaglenko.blog.service.SequenceGeneratorService;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoOperations;
