@@ -20,16 +20,15 @@ public class AuthenticationController {
     @ApiOperation(value = "User registration",
             response = UserDto.class)
     @PostMapping("/register")
-    public UserDto register(@RequestBody UserDto dto, Model model) {
+    public UserDto register(@RequestBody UserDto dto) {
         return mapper.mapToDto(authService
                 .register(dto.getUsername(), dto.getPassword()));
-
     }
 
     @ApiOperation(value = "User login",
             response = UserDto.class)
     @PostMapping("/login")
-    public UserDto login(@RequestBody UserDto dto, Model model) throws AuthenticationException {
+    public UserDto login(@RequestBody UserDto dto) throws AuthenticationException {
         return mapper.mapToDto(authService.login(dto.getUsername(), dto.getPassword()));
     }
 }
